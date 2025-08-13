@@ -2,20 +2,20 @@ import React from 'react';
 import styled from 'styled-components';
 import { useNavigate, useLocation } from 'react-router-dom';
 
+const Wrapper = styled.div`
+  height:143px;
+  width: 100%;
+  background: #ffffff;
+`
+
 const TopNavigation = styled.div`
   position: absolute;
-  top: 60px;
+  top: 100px;
   left: 29px;
   display: flex;
   align-items: center;
-  gap: 92px;
-  z-index: 10;
-`;
-
-const NavigationTabs = styled.div`
-  display: flex;
   gap: 15px;
-  align-items: center;
+  z-index: 10;
 `;
 
 const Tab = styled.div`
@@ -49,12 +49,12 @@ export default function NavBar() {
   };
 
   return (
+    <Wrapper>
     <TopNavigation>
-      <NavigationTabs>
         <Tab active={pathname === '/'} onClick={() => handleTabClick('home')}>홈</Tab>
         <Tab active={pathname.startsWith('/my-place')} onClick={() => handleTabClick('places')}>나의 장소</Tab>
         <Tab active={pathname.startsWith('/character')} onClick={() => handleTabClick('character')}>구니 키우기</Tab>
-      </NavigationTabs>
     </TopNavigation>
+    </Wrapper>
   );
 }
