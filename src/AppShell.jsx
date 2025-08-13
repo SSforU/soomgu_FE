@@ -20,7 +20,6 @@ const PhoneFrame = styled.div`
   /* height는 aspect-ratio에 따라 자동 계산됨 */
 
   background: #fff;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.25);
   overflow: hidden;
   position: relative;              /* 내부 absolute 기준 */
   box-sizing: border-box;
@@ -34,10 +33,10 @@ const PhoneFrame = styled.div`
     box-shadow: none;
     /* iOS 안전영역 */
     padding:
-      max(16px, env(safe-area-inset-top))
-      max(16px, env(safe-area-inset-right))
-      max(16px, env(safe-area-inset-bottom))
-      max(16px, env(safe-area-inset-left));
+      max(0px, env(safe-area-inset-top))
+      max(0px, env(safe-area-inset-right))
+      max(0px, env(safe-area-inset-bottom))
+      max(0px, env(safe-area-inset-left));
   }
 `;
 
