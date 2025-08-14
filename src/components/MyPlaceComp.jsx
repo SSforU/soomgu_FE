@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useNavigate } from 'react-router-dom'
 
 // Styled Components
 const Container = styled.div`
@@ -9,6 +10,13 @@ const Container = styled.div`
   box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.15);
   width: 100%;
   height: 120px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 6px 6px 8px 0px rgba(0, 0, 0, 0.2);
+  }
 `
 
 const ImageArea = styled.div`
@@ -109,6 +117,8 @@ const IconText = styled.div`
 `
 
 export default function MyPlaceComp({ guName, subwayLines = [] }) {
+  const navigate = useNavigate()
+  
   // 지하철 노선별 이미지 매핑 (실제 이미지 경로로 수정 필요)
   const subwayLineImages = {
     1: '/icons/line1.png',
@@ -122,8 +132,12 @@ export default function MyPlaceComp({ guName, subwayLines = [] }) {
     9: '/icons/line9.png',
   }
 
+  const handleClick = () => {
+    navigate(`/gu-detail/${guName}`)
+  }
+
   return (
-    <Container>
+    <Container onClick={handleClick}>
       <ImageArea />
       
       <ContentArea>
