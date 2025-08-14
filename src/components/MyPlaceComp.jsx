@@ -8,7 +8,7 @@ const Container = styled.div`
   position: relative;
   border-radius: 10px;
   box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.15);
-  width: 100%;
+  width: 95%;
   height: 120px;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
