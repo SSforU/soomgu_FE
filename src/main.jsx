@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage";
 import MyPlacePage from "./pages/MyPlacePage";
 import CharacterPage from "./pages/CharacterPage";
 import PageSelection_gu from "./pages/PlaceSelection_gu";
+import GuDetailPage from "./pages/GuDetailPage";
 
 const router = createBrowserRouter([
   {
@@ -14,7 +15,8 @@ const router = createBrowserRouter([
       { index: true, element: <HomePage /> },
       { path: "place-selection-gu", element: <PageSelection_gu /> },
       { path: "my-place", element: <MyPlacePage /> },
-      { path: "character", element: <CharacterPage /> }
+      { path: "character", element: <CharacterPage /> },
+      { path: "gu-detail/:guName", element: <GuDetailPage /> }
     ]
   }
 ]);
